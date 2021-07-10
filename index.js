@@ -10,6 +10,12 @@ app.use(cors());
 app.use(bodyParser.json({limit:"30mb", extended: true})) // express.json() can be used as well;
 app.use(bodyParser.urlencoded({limit:"30mb", extended:true}))
 
+// Routes
+import postRoute from "./routes/posts.js";
+
+app.use('/posts', postRoute); // first param tells the base url for all the postRoute calls
+
+
 //mongoDB connection URL
 const CONNECTION_URL = "mongodb+srv://sarthaksaklecha:ilovescience@cluster0.pdevg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 5000;
