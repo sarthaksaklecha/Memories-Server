@@ -17,12 +17,12 @@ app.use('/posts', postRoute); // first param tells the base url for all the post
 
 
 //mongoDB connection URL
-const CONNECTION_URL = "mongodb+srv://sarthaksaklecha:ilovescience@cluster0.pdevg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const CONNECTION_URL = "mongodb+srv://sarthaksaklecha:ilovescience@cluster0.pdevg.mongodb.net/MemoriesDB?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser:true , useUnifiedTopology:true}) // extra params not required but are used to avoid warnings
         .then(()=> app.listen(PORT, ()=>console.log(`server running on port : ${PORT}`)))
-        .catch((err)=> console.log(error.messsage));
+        .catch((err)=> console.log(err));
 
 // to avoid warnings
 mongoose.set("useFindAndModify", false);
